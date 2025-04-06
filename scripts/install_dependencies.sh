@@ -10,10 +10,11 @@ else
   exit 1
 fi
 
+# Install pip3 for Amazon Linux 2023
 if ! command -v pip3 &> /dev/null; then
-    echo "Installing pip3..."
+    echo "pip3 not found, installing..."
     sudo yum update -y
-    sudo yum install -y python3
+    sudo yum install -y python3-pip
 fi
 
 pip3 install -r requirements.txt
